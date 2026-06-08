@@ -79,8 +79,14 @@ def embed_ghost(readme_path: str, secret_text: str, output_path: str):
     binary = "".join(format(b, "08b") for b in payload)
     ghost_tail = "".join(ZW_ONE if bit == "1" else ZW_ZERO for bit in binary)
 
+    if "\n" in public_text:
+        parts = public_text.split("\n", 1)
+        combined_text = parts[0] + ghost_tail + "\n" + parts[1]
+    else:
+        combined_text = ghost_tail + public_text
+
     with open(output_path, "w", encoding="utf-8") as f:
-        f.write(public_text + ghost_tail)
+        f.write(combined_text)
 
     print(get_msg("success_embed", path=output_path, size=len(secret_bytes)))
 
