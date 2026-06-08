@@ -25,22 +25,11 @@
 
 ## 🛠️ Execution Instructions / Запуск
 
-### 📦 Dependencies / Зависимости (`requirements.txt`)
-
-Create a `requirements.txt` file (Optional, for documentation purposes):
-
-```txt
-# Git-Ghost uses only the Python 3 standard library (os, struct, locale, urllib).
-# No external packages are required to run this tool.
-#
-# Git-Ghost использует только стандартную библиотеку Python 3 (os, struct, locale, urllib).
-# Для работы утилиты не требуется установка внешних пакетов.
-
 ```
 
 ### 🚀 Usage Example / Пример работы
 
-```bash
+
 python main.py
 
 ```
